@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nomor Kamar"
+        android:textSize="12sp"
+        android:textColor="@color/grey"/>
+    <EditText
+        android:id="@+id/etEditKamar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contoh: 01"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biaya Kamar / Bulan"
+        android:textSize="12sp"
+        android:textColor="@color/grey"/>
+    <EditText
+        android:id="@+id/etEditHarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contoh: 230000"
+        android:inputType="number"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Total Hutang"
+        android:textSize="12sp"
+        android:textColor="@color/grey"/>
+    <EditText
+        android:id="@+id/etEditHutang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:inputType="number"/>
+
+</LinearLayout>

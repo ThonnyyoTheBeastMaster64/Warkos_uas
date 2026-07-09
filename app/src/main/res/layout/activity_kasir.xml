@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header Custom -->
+        <LinearLayout
+            android:id="@+id/headerKasir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_header"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kasir Pintar"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTanggalSkrg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rabu, 08 Juli 2026"
+                    android:textColor="#E0E0E0"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnLogoutKasir"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_lock_power_off"
+                app:tint="@color/white"
+                android:contentDescription="Logout" />
+        </LinearLayout>
+
+        <!-- Fitur Pencarian & Filter -->
+        <LinearLayout
+            android:id="@+id/layoutFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/etCariProduk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Cari makanan..."
+                android:background="@drawable/bg_input"
+                android:padding="10dp"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawablePadding="8dp"
+                android:textSize="14sp"/>
+
+            <Spinner
+                android:id="@+id/spFilterKategori"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_input"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <!-- List Produk -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvKasir"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            android:paddingHorizontal="8dp" />
+    </LinearLayout>
+
+    <!-- Panel Pembayaran (Bottom Sheet) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/panelBayar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_peekHeight="80dp"
+        app:behavior_hideable="false"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:cardElevation="24dp"
+        app:cardCornerRadius="24dp"
+        android:layout_marginBottom="-12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Handle for dragging -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="#DDDDDD"/>
+
+            <!-- Peek View (Always Visible) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Belanja"
+                        android:textSize="12sp"
+                        android:textColor="@color/grey"/>
+                    <TextView
+                        android:id="@+id/tvTotalBelanja"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp 0"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Geser Atas Detail ↑"
+                    android:textSize="11sp"
+                    android:textColor="@color/grey_light"
+                    android:layout_marginEnd="8dp"/>
+            </LinearLayout>
+
+            <!-- Content View (Hidden when collapsed) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="30dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metode Pembayaran"
+                    android:textSize="13sp"
+                    android:textColor="@color/grey"
+                    android:layout_marginBottom="6dp"/>
+
+                <Spinner
+                    android:id="@+id/spModeBayar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input"
+                    android:padding="8dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Uang Dibayar"
+                    android:textSize="13sp"
+                    android:textColor="@color/grey"
+                    android:layout_marginBottom="6dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/etUangBayar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:background="@null"
+                        android:textColor="@color/black"/>
+
+                    <Button
+                        android:id="@+id/btnUangPas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UANG PAS"
+                        android:textSize="10sp"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                </LinearLayout>
+
+                <!-- Quick Cash Shortcuts -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:layout_marginTop="8dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button android:id="@+id/btnCash10k" android:layout_width="wrap_content" android:layout_height="36dp" android:text="10rb" android:textSize="10sp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_marginEnd="6dp"/>
+                        <Button android:id="@+id/btnCash20k" android:layout_width="wrap_content" android:layout_height="36dp" android:text="20rb" android:textSize="10sp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_marginEnd="6dp"/>
+                        <Button android:id="@+id/btnCash50k" android:layout_width="wrap_content" android:layout_height="36dp" android:text="50rb" android:textSize="10sp" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_marginEnd="6dp"/>
+                        <Button android:id="@+id/btnCash100k" android:layout_width="wrap_content" android:layout_height="36dp" android:text="100rb" android:textSize="10sp" style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/btnProsesBayar"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="CETAK STRUK &amp; SELESAI"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/primary"
+                    app:cornerRadius="12dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

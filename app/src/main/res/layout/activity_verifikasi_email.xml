@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <TextView
+        android:id="@+id/tvInfoVerifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kami sudah kirim link verifikasi ke email kamu."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <ProgressBar
+        android:id="@+id/progressVerifikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnCekVerifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saya Sudah Verifikasi" />
+
+    <Button
+        android:id="@+id/btnKirimUlang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Kirim Ulang Email" />
+
+</LinearLayout>

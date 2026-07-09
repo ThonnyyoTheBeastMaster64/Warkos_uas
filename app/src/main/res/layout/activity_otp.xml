@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verifikasi OTP"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"/>
+
+    <TextView
+        android:id="@+id/tvInstruksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukkan kode OTP 6-digit"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/etOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kode OTP"
+        android:inputType="number"
+        android:maxLength="6"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/edit_text"/>
+
+    <Button
+        android:id="@+id/btnVerifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verifikasi Sekarang"
+        android:backgroundTint="@color/primary"
+        android:textColor="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/progressOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+</LinearLayout>
